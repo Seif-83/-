@@ -255,7 +255,7 @@ body {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
@@ -266,6 +266,57 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+}
+
+/* Video item wrapper for consistent spacing and responsive labels */
+.video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.video-item p {
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+  }
+  .video-grid iframe {
+    height: 180px;
+  }
+  .courses-container,
+  .videos-container,
+  .course-details-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .video-grid iframe {
+    height: 160px;
+  }
+  .course-card img {
+    height: 140px;
+    object-fit: cover;
+  }
+  footer {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
 
 .video-grid iframe:hover {
